@@ -13,7 +13,7 @@ const NavBar = () => {
               <Link className="text-3xl font-bold font-heading" href="#">
                 بلاگ
               </Link>
-              <ul className="flex px-4 mx-auto font-semibold font-heading space-x-12 gap-x-2">
+              <ul className="flex px-4 mx-auto font-semibold font-heading space-x-4 md:space-x-8 gap-x-2">
                 <li>
                   <Link className="hover:text-gray-200" href="#">
                     خانه
@@ -27,7 +27,7 @@ const NavBar = () => {
               </ul>
             </div>
 
-            <Link href='/' className=" flex gap-x-2 mr-6 items-center bg-blue-600 text-white px-3 py-2 rounded">
+            <Link href='/' className=" flex gap-x-2  items-center bg-blue-600 text-white px-3 py-2 rounded">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -48,21 +48,6 @@ const NavBar = () => {
             </Link>
           </nav>
         </section>
-      </div>
-      <div className="absolute bottom-0 right-0 mb-4 mr-4 z-10">
-        <div>
-          <a
-            title="Follow me on twitter"
-            href="https://www.twitter.com/asad_codes"
-            target="_blank"
-            className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12"
-          >
-            <img
-              className="object-cover object-center w-full h-full rounded-full"
-              src="https://www.imore.com/sites/imore.com/files/styles/large/public/field/image/2019/12/twitter-logo.jpg"
-            />
-          </a>
-        </div>
       </div>
     </>
   );
