@@ -1,13 +1,36 @@
+import { FormatTime } from "@/utils/Helpers";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+interface PostProps {
+  id: string;
+  author: string;
+  date: string;
+  thumbnail?: string;
+  authorEmail?: string;
+  title: string;
+  content: string;
+  category?: string;
+}
 
-const PostCard = () => {
+const PostCard = async ({
+  id,
+  author,
+  date,
+  thumbnail,
+  title,
+  content,
+  category,
+}: PostProps) => {
+  
   return (
     <div className="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden my-5">
-      <img
+      <Image
         className="w-full h-56 object-cover object-center"
-        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+        src={thumbnail ? thumbnail : ""}
         alt="avatar"
+        width={500}
+        height={500}
       />
       <div className="flex items-center px-6 py-3 bg-gray-900">
         <svg
@@ -25,15 +48,28 @@ const PostCard = () => {
             d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5-3.9 19.5m-2.1-19.5-3.9 19.5"
           />
         </svg>
-
-        <h1 className="mx-3 text-white font-semibold text-lg">عنوان</h1>
+        <h1 className="mx-3 text-white font-semibold text-lg">{title}</h1>
       </div>
-      <div className="py-4 px-6">
-        <p className="text-lg text-gray-700 line-clamp-3">
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-          از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و
-          سطرآنچنان که لازم است
-        </p>
+      <div className="mt-2 px-6 flex items-center gap-x-1 text-xs">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-4 h-4"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+          />
+        </svg>
+
+        <p>نوشته شده توسط : {author} در {FormatTime(date)}</p>
+      </div>
+      <div className="py-2 px-6">
+        <p className="text-lg text-gray-700 line-clamp-3">{content}</p>
         <div className="flex items-center mt-4 text-gray-700 gap-x-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,10 +91,14 @@ const PostCard = () => {
             />
           </svg>
 
-          <h1 className="px-2 text-sm bg-blue-600 p-0.5 rounded text-white">سرگرمی</h1>
+          <p className="px-2 text-sm bg-blue-600 p-0.5 rounded text-white">
+            {category}
+          </p>
         </div>
         <div className="mt-4 flex justify-center">
-            <Link href='' className=" bg-gray-900 text-white py-1 px-2 rounded">مشاهده پست </Link> 
+          <Link href={`/posts/${id}`} className=" bg-gray-900 text-white py-1 px-2 rounded">
+            مشاهده پست{" "}
+          </Link>
         </div>
       </div>
     </div>
