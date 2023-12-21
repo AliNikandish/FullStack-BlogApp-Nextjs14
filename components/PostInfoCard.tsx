@@ -4,6 +4,7 @@ import React from "react";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import Link from "next/link";
+import DeleteButton from "./DeleteButton";
 interface PostProps {
   id: string;
   title: string;
@@ -103,7 +104,7 @@ const PostInfoCard = async ({
             
             <div className="flex items-center gap-x-4">
 
-              <button className="bg-red-500 text-white px-2 py-1 rounded">حذف پست</button>
+              <DeleteButton id={id}/>
               <Link href={`${id}/edit`} className="bg-blue-500 text-white px-2 py-1 rounded">ویرایش پست</Link>
             </div>
             
