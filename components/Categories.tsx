@@ -20,9 +20,7 @@ const getCategories = async (): Promise<Category[] | null> => {
 
 const Categories = async () => {
   const categories = await getCategories();
-  console.log(categories);
   
-
   return (
     <div className="mt-5">
       <h3>موضوعات:</h3>
