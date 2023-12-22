@@ -28,7 +28,7 @@ const Categories = async () => {
       <div className="flex gap-x-2 mt-2">
 
         {categories?.map(category =>{
-          return(<Link href={`/categories/${category.catName}`} 
+          return(<Link key={category.id} href={`/categories/${category.catName}`} 
           className="bg-blue-500 text-blue-100 py-2 px-4 rounded-full text-xs font-bold flex items-center">
               {category.catName}
         </Link>

@@ -60,7 +60,7 @@ const Form = ({ isEdit,id,
     }
     
 
-  }, []);
+  }, [catName,isEdit,orgContent,orgImage,orgPublicId,orgtitle]);
 
   const handleImageUpload = (result: CldUploadWidgetResults) => {
     console.log("result: ", result);
@@ -223,7 +223,7 @@ const Form = ({ isEdit,id,
 
               {categories.map((category) => {
                 return (
-                  <option value={category.catName}>{category.catName}</option>
+                  <option key={category.id} value={category.catName}>{category.catName}</option>
                 );
               })}
             </select>
