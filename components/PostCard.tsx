@@ -2,6 +2,8 @@ import { FormatTime } from "@/utils/Helpers";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import noImage from '../public/thumbnail.jpg'
+
 interface PostProps {
   id: string;
   author: string;
@@ -27,7 +29,7 @@ const PostCard = async ({
     <div className="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden my-5">
       <Image
         className="w-full h-56 object-cover object-center"
-        src={thumbnail ? thumbnail : ""}
+        src={thumbnail ? thumbnail : noImage}
         alt="avatar"
         width={500}
         height={500}
