@@ -28,7 +28,7 @@ const PostCard = async ({
   return (
     <div className="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden my-5">
       <Image
-        className="w-full h-56 object-cover object-center"
+        className="w-full h-56 object-center"
         src={thumbnail ? thumbnail : noImage}
         alt="avatar"
         width={500}

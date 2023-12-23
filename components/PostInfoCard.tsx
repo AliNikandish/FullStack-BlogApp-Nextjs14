@@ -34,7 +34,7 @@ const PostInfoCard = async ({
     <div className="max-w-7xl mx-auto px-2 mt-8">
       <div className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
         <div className="w-full md:w-1/3 bg-white grid place-items-center">
-          <Image src={imageUrl ? imageUrl : noImage } alt="" width={1000} height={1000} />
+          <Image src={imageUrl ? imageUrl : noImage } alt="" width={1000} height={1000}/>
         </div>
         <div className="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
           <div className="flex  item-center">
