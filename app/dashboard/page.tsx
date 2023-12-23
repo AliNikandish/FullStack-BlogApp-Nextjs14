@@ -31,6 +31,29 @@ const page = async () => {
   return (
     <div className="max-w-7xl mx-auto px-2">
       <h3 className="mt-4">پست های شما </h3>
+      <div className="my-5 flex justify-center">
+        <Link
+          className="mt-4 bg-blue-500 text-white px-2 py-1 rounded flex gap-x-2"
+          href={"/posts/new"}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+
+          <p>ساخت پست</p>
+        </Link>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5">
         {posts && posts.length > 0 ? (
           posts.map((post: Post) => (
@@ -49,9 +72,6 @@ const page = async () => {
         ) : (
           <div className="py-6 flex  items-center flex-col">
             <p>هیچ پستی وجود ندارد.</p>
-            <Link className="mt-4 bg-blue-500 text-white px-2 py-1 rounded" href={"/posts/new"}>
-              ساخت پست جدید
-            </Link>
           </div>
         )}
       </div>
